@@ -29,7 +29,7 @@ function Space() {
 
   return (
     <>
-      <Header func1={toggleMenu}/>
+      <Header func1={toggleMenu} onclick={toggleMenuClose}/>
       <main onClick={toggleMenuClose}>
         <section className='mt-10'>
           <div className='max-w-[1100px] mx-auto  rounded-lg bg-yellowish text-white p-10 outline oultline-black outline-2'>

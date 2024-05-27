@@ -38,7 +38,7 @@ function Gallery() {
 
   return (
     <>
-      <Header func1={toggleMenu}/>
+      <Header func1={toggleMenu} onclick={toggleMenuClose}/>
       <main onClick={toggleMenuClose}>
         
         {/* <GalleryDetail isHidden={'hidden'}/> */}

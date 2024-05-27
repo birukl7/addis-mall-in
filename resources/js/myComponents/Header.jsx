@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faBars, faBlog, faBuilding, faContactCard, faDashboard, faHamburger, faHome, faImage } from '@fortawesome/free-solid-svg-icons';
+import {  faBars, faBlog, faBuilding, faContactCard, faDashboard, faHamburger, faHome, faImage, faX } from '@fortawesome/free-solid-svg-icons';
 import Top from './Top';
 import SocialIcon from './TinyIcons/SocialIcon';
 import { faInstagram, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 import { usePage } from '@inertiajs/react';
 
 
-function Header({func1}) {
+function Header({func1, onclick}) {
 
   const url = usePage()
 
@@ -67,9 +67,10 @@ function Header({func1}) {
 
 			<header className='max-w-6xl mx-auto bg-slate-100 shadow-2xl rounded-lg sm:px-10 px-4 py-5 flex justify-between sticky top-0 z-40'>
 				
-					<ul className='flex md:items-center  gap-x-8 font-bold md:static fixed z-20 md:z-0 bottom-0 top-0 right-20 left-0 flex-col md:flex-row pt-32 md:pt-0 shadow-xl md:shadow-none md:bg-transparent bg-slate-200 items-start pl-20 md:pl-0 justify-start hidden md:flex ' id='navlinks'>
-            <div className='md:hidden'>
-              <h1 className='font-bold text-2xl'>Mall In.</h1>
+					<ul className='flex md:items-center  gap-x-8 font-bold md:static fixed z-20 md:z-0 bottom-0 top-0 right-20 left-0 flex-col md:flex-row pt-8 md:pt-0 shadow-xl md:shadow-none md:bg-transparent bg-slate-200 items-start pl-20 md:pl-0 justify-start  md:flex  ' id='navlinks'>
+            <div className='md:hidden flex items-center justify-between '>
+              <button onClick={onclick} className='-ml-16 -mt-12'><FontAwesomeIcon icon={faX} className=''/></button>
+              <h1 className='font-bold text-xl ml-16 mb-4'>Mall In.</h1>
             </div>
             {
               lists.map((list)=> 
@@ -99,11 +100,11 @@ function Header({func1}) {
                 </button>
               </div>
               <div>
-                <h1 className='font-bold text-xl'>Mall In</h1>
+                <h1 className='font-bold'>MallIn</h1>
               </div>
             </div>
 						<Ddrop />
-						<li><a href="https://t.me/birukl_777" target='_blank' className=' bg-yellowish text-white rounded-3xl md:p-3 p-2 text-sm flex items-center gap-x-2 '>Contact Us <FontAwesomeIcon icon={faTelegram} className='text-xl' /></a></li>
+						<li><a href="https://t.me/birukl_777" target='_blank' className=' bg-yellowish text-white rounded-3xl md:p-3 py-[5px] px-[8px]   text-sm flex items-center gap-x-2 '>Contact Us <FontAwesomeIcon icon={faTelegram} className='text-xl hidden md:block' /></a></li>
 						{/* <li><a href=""><FontAwesomeIcon icon={faHamburger} /></a></li> */}
 					</ul>
 			

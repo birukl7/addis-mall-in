@@ -27,7 +27,7 @@ function Mall() {
   
   return (
     <>
-     <Header func1={toggleMenu}/>
+     <Header func1={toggleMenu} onclick={toggleMenuClose}/>
      <main onClick={toggleMenuClose}>
         {/* <h1 className='max-w-[1100px] mx-auto font-semibold text-3xl py-5'>Mall Lists</h1> */}
         <section className='max-w-[1300px] w-full mx-auto  items-center justify-center px-5 mt-24'  >

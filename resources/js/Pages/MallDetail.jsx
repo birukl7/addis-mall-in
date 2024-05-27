@@ -23,7 +23,7 @@ function MallDetail() {
 
   return (
     <>
-      <Header func1={toggleMenu}/>
+      <Header func1={toggleMenu} onclick={toggleMenuClose}/>
       <main onClick={toggleMenuClose}>
         <section className='max-w-[1200px] mx-auto py-10 px-5'>
           <h1 className='text-3xl font-semibold'>Century Mall</h1>
@@ -36,11 +36,11 @@ function MallDetail() {
             <FontAwesomeIcon icon={faLink} />
           </div>
 
-          <div className='flex gap-x-4 py-2'>
-            <span><strong>5</strong> Total Space |</span>
-            <span><strong>8</strong> Free Space |</span>
-            <span><strong>0</strong> Vacancy |</span>
-            <span><strong>3</strong> Event |</span>
+          <div className='flex gap-x-4 py-2 md:flex-row flex-col'>
+            <span><strong><span className='md:hidden'>|</span> 5</strong> Total Space <span className='hidden md:block'>|</span></span>
+            <span><strong><span className='md:hidden'>|</span> 8</strong> Free Space <span className='hidden md:block'>|</span></span>
+            <span><strong><span className='md:hidden'>|</span> 0</strong> Vacancy <span className='hidden md:block'>|</span></span>
+            <span><strong><span className='md:hidden'>|</span> 3</strong> Event <span className='hidden md:block'>|</span></span>
 
 
           </div>
@@ -59,7 +59,7 @@ function MallDetail() {
 
               <div>
                 <h3 className='text-2xl font-semibold'>Amenities</h3>
-                <div className='flex gap-x-12  rounded-2xl my-5 '>
+                <div className='flex gap-x-12  rounded-2xl my-5 md:flex-row flex-col px-4 md:px-0'>
                   <Amenity icon1={faCamera} icon2={faDumbbell} icon3={faBed} title1={'Security'} title2={'Gym'} title3={'Furnished'} />
                   <Amenity icon1={faCamera} icon2={faDumbbell} icon3={faBed} title1={'Security'} title2={'Gym'} title3={'Furnished'} />
                   <Amenity icon1={faCamera} icon2={faDumbbell} icon3={faBed} title1={'Security'} title2={'Gym'} title3={'Furnished'} />
@@ -71,17 +71,17 @@ function MallDetail() {
               <h2 className='text-2xl font-semibold mb-2'>Book it</h2>
               <div className='flex flex-col gap-y-1'>
                 <label htmlFor="" className='p-2'>Full Name</label>
-                <input type="text" name="" id="" className='w-[300px] mx-3 focus:ring-0 ring-gray-500' placeholder='Enter your name'/>
+                <input type="text" name="" id="" className='md:w-[300px] mx-3 focus:ring-0 ring-gray-500' placeholder='Enter your name'/>
               </div>
 
               <div className='flex flex-col gap-y-1 py-1'>
                 <label htmlFor="" className='p-2'>Email Address</label>
-                <input type="text" name="" id="" className='w-[300px] mx-3 focus:ring-0 ring-gray-500' placeholder='Enter email'/>
+                <input type="text" name="" id="" className='md:w-[300px] mx-3 focus:ring-0 ring-gray-500' placeholder='Enter email'/>
               </div>
 
               <div className='flex flex-col gap-y-1 py-1'>
                 <label htmlFor="" className='p-2'>Message</label>
-                <textarea type="text" name="" id="" className='w-[400px] h-[200px] mx-3 focus:ring-0 ring-gray-500' placeholder='Enter message'></textarea> 
+                <textarea type="text" name="" id="" className='md:w-[400px] h-[200px] mx-3 focus:ring-0 ring-gray-500' placeholder='Enter message'></textarea> 
               </div>
 
               <button type='submit' className='px-5 py-3 text-white bg-greenish my-4 mx-4'>Book</button>

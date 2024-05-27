@@ -54,7 +54,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
   
   return (
     <>
-      <Header func1={toggleMenu}/>
+      <Header func1={toggleMenu} onclick={toggleMenuClose}/>
       
       <main onClick={toggleMenuClose}>
         <section 

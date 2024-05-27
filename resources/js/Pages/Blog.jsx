@@ -22,7 +22,7 @@ function Blog() {
 
   return (
     <>
-     <Header func1={toggleMenu} />
+     <Header func1={toggleMenu} onclick={toggleMenuClose}/>
       <main onClick={toggleMenuClose}>
 
         <section className='flex max-w-[1100px] mx-auto pt-10 gap-x-[8%] flex-col md:flex-row px-3'>

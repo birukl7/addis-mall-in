@@ -20,7 +20,7 @@ function Contact() {
   }
   return (
     <>
-      <Header func1={toggleMenu} />
+      <Header func1={toggleMenu} onclick={toggleMenuClose}/>
       <main onClick={toggleMenuClose}>
         <section className='flex max-w-[1400px] mx-auto mt-16  items-center flex-col md:flex-row gap-x-[100px] px-5'>
           <div className='md:w-[40%]'>
