@@ -4,12 +4,25 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
+import Header from '@/myComponents/Header';
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
+    const toggleMenu = ()=>{
+        const navlinks = document.querySelector('#navlinks')
+        navlinks.classList.toggle('hidden')
+      }
+    
+      const toggleMenuClose = ()=>{
+        const navlinks = document.querySelector('#navlinks')
+        navlinks.classList.add('hidden')
+      }
+
     return (
-        <div className="min-h-screen bg-gray-100">
+        <>
+        <Header func1={toggleMenu}/>
+        <div onClick={toggleMenuClose} className="min-h-screen bg-gray-100 pt-5">
             <nav className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -121,5 +134,6 @@ export default function Authenticated({ user, header, children }) {
 
             <main>{children}</main>
         </div>
+        </>
     );
 }

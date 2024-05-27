@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -11,7 +12,37 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'envVariables' => [
+            'APP_URL' => env('APP_URL')
+        ]
+        
     ]);
+
+    
+});
+
+Route::get('/gallery', function(){
+    return Inertia::render('Gallery');
+});
+
+Route::get('/blogs', function(){
+    return Inertia::render('Blog');
+});
+
+Route::get('/contacts', function(){
+    return Inertia::render('Contact');
+});
+
+Route::get('/malls', function(){
+    return Inertia::render('Mall');
+});
+
+Route::get('/spaces', function(){
+ return Inertia::render('Space');
+});
+
+Route::get('/mall-detail', function(){
+    return Inertia::render('MallDetail');
 });
 
 Route::get('/dashboard', function () {
