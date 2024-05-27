@@ -34,11 +34,19 @@ Route::get('/contacts', function(){
 });
 
 Route::get('/malls', function(){
-    return Inertia::render('Mall');
+    return Inertia::render('Mall', [
+        'envVariables' => [
+            'APP_URL' => env('APP_URL')
+        ]
+    ]);
 });
 
 Route::get('/spaces', function(){
- return Inertia::render('Space');
+ return Inertia::render('Space',[
+    'envVariables' => [
+        'APP_URL' => env('APP_URL')
+    ]
+ ]);
 });
 
 Route::get('/mall-detail', function(){

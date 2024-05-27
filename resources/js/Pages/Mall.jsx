@@ -9,8 +9,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import FIlterContainer from '@/myComponents/FIlterContainer'
 import MyFooter from '@/myComponents/MyFooter'
+import { usePage } from '@inertiajs/react'
 
 function Mall() {
+
+  const { envVariables } = usePage().props;
   
   const toggleMenu = ()=>{
     const navlinks = document.querySelector('#navlinks')
@@ -29,7 +32,7 @@ function Mall() {
         {/* <h1 className='max-w-[1100px] mx-auto font-semibold text-3xl py-5'>Mall Lists</h1> */}
         <section className='max-w-[1300px] w-full mx-auto  items-center justify-center px-5 mt-24'  >
 
-          <FIlterContainer/>
+          <FIlterContainer url={envVariables.APP_URL}/>
         </section>
 
         <section className='max-w-[1200px] mx-auto mt-12 mb-4 px-5' >

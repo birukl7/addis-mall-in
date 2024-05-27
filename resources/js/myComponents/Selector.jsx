@@ -8,12 +8,11 @@ const Selector = ({ title, api , url}) => {
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState("");
   const [open, setOpen] = useState(false);
-  const { envVariables } = usePage().props;
 
-  console.log(envVariables.APP_URL);
+
 
   useEffect(() => {
-    fetch(`${envVariables.APP_URL}/api/${api}`)
+    fetch(`${url}/api/${api}`)
       .then((res) => res.json())
       .then((data) => {
         setCountries(data);

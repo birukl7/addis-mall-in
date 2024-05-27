@@ -11,8 +11,11 @@ import GetTheApp from '@/myComponents/GetTheApp'
 import google from '../../../public/images/google-play-badge.png'
 import phonepic from '../../../public/images/phone-mpckup.png'
 import MyFooter from '@/myComponents/MyFooter'
+import { usePage } from '@inertiajs/react'
 
 function Space() {
+
+  const {envVariables} = usePage().props
 
   const toggleMenu = ()=>{
     const navlinks = document.querySelector('#navlinks')
@@ -38,9 +41,9 @@ function Space() {
 
         <section className='max-w-[1200px] mx-auto mt-7'>
           <div className='gap-y-3 md:gap-y-0 grid md:grid-cols-4 sm:grid-cols-3  gap-x-8 p-6 bg-white shadow-2xl rounded-lg'>
-            <Selector title={'Location'} api={'addis-ababa-locations'}/>
-            <Selector title={'Job Type'} api={'job-type'} />
-            <Selector title={'Experience'}  api={'job-experience'}/>
+            <Selector title={'Location'} api={'addis-ababa-locations'} url={envVariables.APP_URL}/>
+            <Selector title={'Job Type'} api={'job-type'} url={envVariables.APP_URL} />
+            <Selector title={'Experience'}  api={'job-experience'} url={envVariables.APP_URL}/>
 
             <div>
               <button type="submit" className='bg-greenish text-white py-3 px-5 flex items-center justify-center mt-7 rounded-xl'>Apply Filter</button>

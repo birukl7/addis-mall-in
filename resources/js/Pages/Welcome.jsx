@@ -32,6 +32,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
   const {name} = useInView()
   const { envVariables } = usePage().props;
   
+  console.log(envVariables.APP_URL)
   // header links
   const lists = [
     {id:1, name: 'Home', link: '/', icon: faHome},

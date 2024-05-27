@@ -10,7 +10,7 @@ function Numbers() {
   return (
     <ScrollTrigger onEnter={()=>setCounterState(true)} onExit={()=>setCounterState(false)}>
     <div className='flex flex-col md:flex-row justify-between md:py-10 '>
-        <div className='flex flex-col items-center justify-center  py-4 md:py-0 md:border-r-2 border-r-black px-16 max-w-[150px]'>
+        <div className='flex flex-col items-center justify-center  py-4 md:py-0 md:border-r-2 border-r-black px-16 max-w-[150px] ml-20 md:ml-0'>
           <span className='text-5xl text-greenish'>
             {counterState && <CountUp start={0} end={200} duration={3}/> }
             +
@@ -21,7 +21,7 @@ function Numbers() {
             <span className='text-xl'>Malls</span>
           </div>
         </div>
-        <div className='flex flex-col items-center justify-center  py-4 md:py-0 md:border-r-2 border-r-black px-16 max-w-[150px] pr-28'>
+        <div className='flex flex-col items-center justify-center  py-4 md:py-0 md:border-r-2 border-r-black px-16 max-w-[150px] md:pr-28 ml-20 md:ml-0'>
           <span className='text-5xl text-greenish'>
           {
             counterState && <CountUp start={0} end={80} duration={3}/>
@@ -34,7 +34,7 @@ function Numbers() {
           </div>
           
         </div>
-        <div className='flex flex-col items-center justify-center  py-4 md:py-0 md:border-r-2 border-r-black px-16 max-w-[150px] pr-28'>
+        <div className='flex flex-col items-center justify-center  py-4 md:py-0 md:border-r-2 border-r-black px-16 max-w-[150px] md:pr-28 ml-20 md:ml-0'>
           <span className='text-5xl text-greenish'>
             {
               counterState && <CountUp start={0} end={2000} duration={3}/>
@@ -45,7 +45,7 @@ function Numbers() {
             <span className='text-xl'>Shops</span>
           </div>      
         </div>
-        <div className='flex flex-col items-center justify-center py-4 md:py-0  md:border-r-2 border-r-black px-16 max-w-[150px] pr-28'>
+        <div className='flex flex-col items-center justify-center py-4 md:py-0  md:border-r-2 border-r-black px-16 max-w-[150px] md:pr-28 ml-20 md:ml-0'>
           <span className='text-5xl text-greenish'>
             {
               counterState && <CountUp start={0} end={3400} duration={3}/>

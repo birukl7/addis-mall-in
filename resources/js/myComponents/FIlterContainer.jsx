@@ -10,7 +10,7 @@ function FIlterContainer({url}) {
       
 
         <Selector title={'Mall Type'} api={'mall-types'} url={url}/>
-        <Selector  title={'Subcity'} api={'addis-ababa-subcities'}/>
+        <Selector  title={'Subcity'} api={'addis-ababa-subcities'} url={url}/>
         <Selector title={'Purpose'} api={'mall-purpose'}url={url} />
         <Selector title={'Near Location'} api={'addis-ababa-locations'} url={url} />
         {/* <SingleFilter title={'Subcity'}/> */}
