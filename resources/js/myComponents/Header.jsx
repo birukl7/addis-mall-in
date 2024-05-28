@@ -67,7 +67,7 @@ function Header({func1, onclick}) {
 
 			<header className='max-w-6xl mx-auto bg-slate-100 shadow-2xl rounded-lg sm:px-10 px-4 py-5 flex justify-between sticky top-0 z-40'>
 				
-					<ul className='flex md:items-center  gap-x-8 font-bold md:static fixed z-20 md:z-0 bottom-0 top-0 right-20 left-0 flex-col md:flex-row pt-8 md:pt-0 shadow-xl md:shadow-none md:bg-transparent bg-slate-200 items-start pl-20 md:pl-0 justify-start  md:flex  ' id='navlinks'>
+					<ul className='flex md:items-center  gap-x-8 font-bold md:static fixed z-20 md:z-0 bottom-0 top-0 right-20 left-0 flex-col md:flex-row pt-8 md:pt-0 shadow-xl md:shadow-none md:bg-transparent bg-slate-200 items-start pl-20 md:pl-0 justify-start  md:flex hidden ' id='navlinks'>
             <div className='md:hidden flex items-center justify-between '>
               <button onClick={onclick} className='-ml-16 -mt-12'><FontAwesomeIcon icon={faX} className=''/></button>
               <h1 className='font-bold text-xl ml-16 mb-4'>Mall In.</h1>
