@@ -6,7 +6,7 @@ import SocialIcon from './TinyIcons/SocialIcon';
 import { faInstagram, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Ddrop from './Ddrop';
 import { useInView } from 'react-intersection-observer';
-import { usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 
 
 function Header({func1, onclick}) {
@@ -28,7 +28,7 @@ function Header({func1, onclick}) {
     },
     { id:3, 
       name: 'Free Space', 
-      link: '/spaces', 
+      link: route('spaces'), 
       icon: faContactCard, 
       styles: `${url.url === '/spaces' ? 'outline outline-1 p-3 rounded-lg':''}`,
     },
@@ -75,9 +75,9 @@ function Header({func1, onclick}) {
             {
               lists.map((list)=> 
               <li key={list.id} className='my-[18px] md:my-0 '>
-                <a href={list.link} className={`hover:text-slate-700 hover:underline flex md:block items-center gap-x-5 ${list.styles}  `}>
+                <Link href={list.link} className={`hover:text-slate-700 hover:underline flex md:block items-center gap-x-5 ${list.styles}  `}>
                 <FontAwesomeIcon icon={list.icon} className='md:hidden text-greenish'/>{list.name}
-                </a>
+                </Link>
               </li>
               )
             }
@@ -87,8 +87,8 @@ function Header({func1, onclick}) {
               <SocialIcon icon={faTwitter} />
             </div>
             <div className='md:hidden mt-10 -ml-3 flex gap-x-2'>
-              <a href='/login' className='p-3 px-4 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Login</a>
-              <a href="/register" className='p-3 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Sign Up</a>
+              <Link href='/login' className='p-3 px-4 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Login</Link>
+              <Link href="/register" className='p-3 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Sign Up</Link>
             </div>
 					</ul>
 

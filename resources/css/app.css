@@ -1,3 +1,27 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#search-contain:hover{
+  transform: rotateY(360deg);
+  transition: transform 700ms ease-in-out;
+}
+#search-bar:focus{
+  outline: none;
+  border:none;
+}
+
+.hero-section{
+   opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s;
+}
+
+.show {
+   opacity: 1;
+    transform: translateY(0);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

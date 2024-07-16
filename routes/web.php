@@ -47,7 +47,7 @@ Route::get('/spaces', function(){
         'APP_URL' => env('APP_URL')
     ]
  ]);
-});
+})->name('spaces');
 
 Route::get('/mall-detail', function(){
     return Inertia::render('MallDetail');

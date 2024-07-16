@@ -2,6 +2,7 @@ import React from 'react'
 import addis from '../../../public/images/addis.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faArrowRight, faBookmark, faCalendar, faInfoCircle, faLocation, faLocationPin, faPerson, faPersonRifle, faShop } from '@fortawesome/free-solid-svg-icons';
+import { Link } from '@inertiajs/react';
 
 function MallCard({rating, num, img}) {
 
@@ -22,9 +23,9 @@ function MallCard({rating, num, img}) {
         </a>
 
         <div className='flex'>
-          <a href="/mall-detail">
+          <Link href="/mall-detail">
             <h3 className='font-bold py-2'>White Conpy Tent Near Coastline</h3>
-          </a>
+          </Link>
           <div>
             <FontAwesomeIcon icon={faBookmark} className='text-black rounded-sm p-3 outline-none outline-1 text-xs hover:bg-black hover:text-white transition duration-150 ease-in-out cursor-pointer' />
           </div>
