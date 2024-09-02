@@ -1,6 +1,6 @@
 import Header from '@/myComponents/Header'
 import contactImg from '../../../public/images/Contact us-amico.svg'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons'
 import MyFooter from '@/myComponents/MyFooter'
@@ -9,6 +9,10 @@ import google from '../../../public/images/google-play-badge.png'
 import phoneImag from '../../../public/images/phone-mpckup.png'
 
 function Contact() {
+  const [posts, setPosts] = useState([]);
+
+
+
   const toggleMenu = ()=>{
     const navlinks = document.querySelector('#navlinks')
     navlinks.classList.toggle('hidden')

@@ -65,7 +65,7 @@ function MyFooter({bgColor, youWant}) {
 
           
           <div className='py-5 border-t-2 mt-3 flex justify-center items-center'>
-            copyright@<span className='text-yellowish'>Melfan Tech</span> &nbsp;by&nbsp; <a href="https://biruk-lemma.vercel.com" className='underline'>Biruk Lemma</a> &nbsp;2024
+            copyright@&nbsp;by&nbsp; <a href="https://biruk-lemma.vercel.com" className='underline'>Biruk Lemma</a> &nbsp;2024
           </div>
         </footer>
         </section>

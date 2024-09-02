@@ -2,10 +2,7 @@ import Header from '@/myComponents/Header'
 import Selector from '@/myComponents/Selector'
 import JobCard from '@/space-components/JobCard'
 import rust from '../../../public/images/pp2.jpg'
-import addis from '../../../public/images/addis.jpg'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import JobGrid from '@/space-components/JobGrid'
 import GetTheApp from '@/myComponents/GetTheApp'
 import google from '../../../public/images/google-play-badge.png'
@@ -36,7 +33,7 @@ function Space() {
             <h1 className='text-3xl font-semibold'>Looking for a new Opportunitits in malls?</h1>
             <p className='py-3'>Browse our latest job openings</p>
           </div>
-          
+
         </section>
 
         <section className='max-w-[1200px] mx-auto mt-7'>
@@ -58,11 +55,11 @@ function Space() {
               <h2 className='text-2xl font-semibold pb-5'>Related Jobs</h2>
             </div>
 
-            
+
               <JobCard image={rust}/>
               <JobCard image={rust}/>
               <JobCard image={rust}/>
-              <JobCard image={rust}/>
+              <JobCard imaget={rust}/>
               <JobCard image={rust}/>
               <div className='flex text-center w-full items-center justify-center py-3 outline outline-1 hover:bg-greenish hover:text-white'>Show More</div>
           </div>

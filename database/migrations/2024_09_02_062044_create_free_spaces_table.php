@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\GalleryImage;
 use App\Models\Mall;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('free_spaces', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Mall::class)->constrained()->cascadeOnDelete();
-            $table->string('image_url');
-            $table->string('description')->nullable();
+            $table->string('location');
+            $table->integer('size')->nullable();
+            $table->decimal('price',10,2)->nullable();
+            $table->boolean('available')->default(true);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('free_spaces');
     }
 };

@@ -87,8 +87,8 @@ function Header({func1, onclick}) {
               <SocialIcon icon={faTwitter} />
             </div>
             <div className='md:hidden mt-10 -ml-3 flex gap-x-2'>
-              <Link href='/login' className='p-3 px-4 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Login</Link>
-              <Link href="/register" className='p-3 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Sign Up</Link>
+              <Link to='/login' className='p-3 px-4 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Login</Link>
+              <Link to="/register" className='p-3 bg-greenish text-white hover:text-black hover:outline hover:outline-1 hover:bg-transparent transition duration-200 ease-linear'>Sign Up</Link>
             </div>
 					</ul>
 

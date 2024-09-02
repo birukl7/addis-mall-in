@@ -11,8 +11,9 @@ function JobCard({image}) {
       <div>
         <h3 className='text-xl font-semibold'>Junior UI/UX Designer</h3>
         <span className='text-gray-400'>Slack Technologies, LLC</span>
-        <p className=' line-clamp-3 py-2 max-w-[500px]'>We are lookin for a young ralented designer to help us to create stunnig websites and apps. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, officiis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, necessitatibus.</p>
-        <div className='flex items-center gap-x-2 p-3 outline outline-1 rounded-lg mb-4 mt-3 hover:bg-greenish hover:text-white cursor-pointer transition-all ease-in-out duration-150' >
+        <p className=' line-clamp-2 py-2 max-w-[500px]'>We are lookin for a young ralented designer to help us to create stunnig websites and apps. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, officiis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, necessitatibus.</p>
+        <div className='flex items-center gap-x-2 p-3 outline outline-1 rounded-lg mb-4 
+         hover:bg-greenish hover:text-white cursor-pointer transition-all ease-in-out duration-150 ' >
           <FontAwesomeIcon icon={faLocation} className='' />
           <span className='underline'>Edna mall</span> 
         </div>
