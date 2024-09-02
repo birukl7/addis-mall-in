@@ -70,13 +70,20 @@ Route::get('/spaces', function(){
 })->name('spaces');
 
 Route::get('/mall-detail/{mall}', function(Mall $mall){
+
+
+
+
     // dd($mall);
     return Inertia::render('MallDetail',[
       'mall' => $mall->only(
         'id',
         'name',
         'website',
-        'rating'
+        'rating',
+        'images',
+        'reviews',
+        ''
 
 
       )

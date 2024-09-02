@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Mall;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class FreeSpaceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'mall_id' => Mall::inRandomOrder()->first()->id,
+            'locaton' => fake()->address(),
+            'size' => fake()->numberBetween(2,50).'m square',
+            'price' =>fake()->numberBetween(10000, 100000),
+            'description' => fake()->paragraph(2),
         ];
     }
 }

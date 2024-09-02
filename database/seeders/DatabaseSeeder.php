@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\FreeSpace;
+use App\Models\FreeSpaceImage;
 use App\Models\MallImage;
 use App\Models\Rating;
+use App\Models\Review;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -26,6 +29,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(MallSeeder::class);
         Rating::factory(5)->create();
-        MallImage::factory(5)->create();
+        MallImage::factory(10)->create();
+        Rating::factory(10)->create();
+        Review::factory(10)->create();
+        FreeSpace::factory(10)->create();
+        FreeSpaceImage::factory(50)->create();
     }
 }
