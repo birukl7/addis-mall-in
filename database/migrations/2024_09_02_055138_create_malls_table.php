@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Gallery;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +14,11 @@ return new class extends Migration
     {
         Schema::create('malls', function (Blueprint $table) {
           $table->id(); // UUID as primary key
+          // $table->foreignIdFor(Gallery::class);
           $table->string('name');
           $table->string('address');
           $table->string('city');
+          $table->boolean('featured')->default(false);
           $table->string('state')->nullable();
           $table->string('postal_code')->nullable();
           $table->string('country');
@@ -27,6 +30,8 @@ return new class extends Migration
           $table->boolean('parking_available')->default(false);
           $table->string('website')->nullable();
           $table->text('description')->nullable();
+          $table->string('estimated_people')->nullable();
+          $table->string('office_number')->nullable();
           $table->decimal('latitude', 10, 7)->nullable();
           $table->decimal('longitude', 10, 7)->nullable();
           $table->timestamps();

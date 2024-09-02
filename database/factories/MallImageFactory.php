@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Mall;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class MallImageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'mall_id' =>  Mall::inRandomOrder()->first()->id,
+            'image_path' => 'http://picsum.photos/seed/'.fake()->randomNumber(100000).'/1000/1000'
         ];
     }
 }

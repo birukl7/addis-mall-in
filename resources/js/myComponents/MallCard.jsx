@@ -1,10 +1,18 @@
 import React from 'react'
-import addis from '../../../public/images/addis.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressBook, faArrowRight, faBookmark, faCalendar, faInfoCircle, faLocation, faLocationPin, faPerson, faPersonRifle, faShop } from '@fortawesome/free-solid-svg-icons';
+import {  faArrowRight, faBookmark, faInfoCircle, faLocationPin, faPersonRifle, faShop } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '@inertiajs/react';
 
-function MallCard({rating, num, img}) {
+function MallCard({
+  rating,
+  num,
+  img,
+  name,
+  location,
+  distance,
+  shopsNumber,
+  peopleNumber
+ }) {
 
   const transition = ' transition-all duration-150 ease-in-out'
 
@@ -24,7 +32,7 @@ function MallCard({rating, num, img}) {
 
         <div className='flex'>
           <Link href="/mall-detail">
-            <h3 className='font-bold py-2'>White Conpy Tent Near Coastline</h3>
+            <h3 className='font-bold py-2'>{name || 'White Conpy Tent Near Coastline'}</h3>
           </Link>
           <div>
             <FontAwesomeIcon icon={faBookmark} className='text-black rounded-sm p-3 outline-none outline-1 text-xs hover:bg-black hover:text-white transition duration-150 ease-in-out cursor-pointer' />
@@ -33,22 +41,22 @@ function MallCard({rating, num, img}) {
 
         <div className='flex gap-x-3 py-2'>
           <FontAwesomeIcon icon={faLocationPin} className=' text-greenish'/>
-          <span className='text-xs'>Megenagna Diaspora, Addis Ababa</span>
+          <span className='text-xs'>{location || 'Megenagna Diaspora, Addis Ababa'}</span>
         </div>
 
         <div className='flex gap-x-3 py-1  w-full border-b-2 pb-6'>
           <FontAwesomeIcon icon={faInfoCircle} className='text-greenish'/>
-          <span className='text-xs font-bold'>Distance from you: <span className='text-yellowish'>12 miles</span></span>
+          <span className='text-xs font-bold'>Distance from you: <span className='text-yellowish'>{distance || '12 miles'}</span></span>
         </div>
 
         <div className='flex justify-between gap-x-4 items-center'>
           <div className='text-xs gap-3 flex items-center pt-4'>
             <FontAwesomeIcon icon={faShop} className='text-greenish'/>
-            <span>28 Shops</span>
+            <span>{shopsNumber || 15} Shops</span>
           </div>
           <div className='text-xs gap-x-2  flex items-center pt-4'>
             <FontAwesomeIcon icon={faPersonRifle} className='text-greenish'/>
-            <span>15</span>
+            <span>{peopleNumber || 28}</span>
           </div>
 
           <a href="/mall-detail">

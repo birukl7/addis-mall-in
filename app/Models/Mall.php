@@ -33,7 +33,12 @@ class Mall extends Model
       return $this->hasMany(FreeSpace::class);
     }
 
-    public function Galleries(){
+
+    public function galleries(){
       return $this->hasMany(Gallery::class);
+    }
+
+    public function bookmarks(){
+      return $this->hasMany(Bookmark::class);
     }
 }

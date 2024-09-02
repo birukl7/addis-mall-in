@@ -2,8 +2,8 @@ import React from 'react';
 import Top from '@/myComponents/Top';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faArrowLeft, faArrowRight, faArrowRotateLeft, faBlog, faBuilding, faContactCard, faHamburger, faHome, faImage, faLocation, faMagnifyingGlass, faMailBulk, faPhone, faShield, faUniversity } from '@fortawesome/free-solid-svg-icons';
+import {  faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faArrowLeft, faArrowRight, faBlog, faBuilding, faContactCard, faHome, faImage, faLocation, faMagnifyingGlass, faMailBulk, faPhone, faShield, faUniversity } from '@fortawesome/free-solid-svg-icons';
 import Ddrop from '@/myComponents/Ddrop';
 import FIlterContainer from '@/myComponents/FIlterContainer';
 import MallCard from '@/myComponents/MallCard';
@@ -18,20 +18,19 @@ import rust from '../../../public/images/phone-mpckup.png'
 import google from '../../../public/images/google-play-badge.png'
 import Numbers from '@/myComponents/Numbers';
 import ArticleCard from '@/myComponents/ArticleCard';
-import SocialIcon from '@/myComponents/TinyIcons/SocialIcon';
-import FooterCard from '@/myComponents/FooterCard';
+
 import FIndMalls from '@/myComponents/FIndMalls';
 import Header from '@/myComponents/Header';
 import GetTheApp from '@/myComponents/GetTheApp';
-import Footer from '@/myComponents/MyFooter';
 import MyFooter from '@/myComponents/MyFooter';
 import { useInView } from 'react-intersection-observer';
-import { usePage } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
+export default function Welcome({ auth, laravelVersion, phpVersion,  }) {
+
   const {name} = useInView()
   const { envVariables } = usePage().props;
-  
+
  // console.log(envVariables.APP_URL)
   // header links
   const lists = [
@@ -51,14 +50,15 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const navlinks = document.querySelector('#navlinks')
     navlinks.classList.add('hidden')
   }
-  
+
   return (
     <>
+      <Head title='Welcome | Addis Mall' />
       <Header func1={toggleMenu} onclick={toggleMenuClose}/>
-      
+
       <main onClick={toggleMenuClose}>
-        <section 
-          style={{ backgroundImage: `url('${mallimage}')` }} 
+        <section
+          style={{ backgroundImage: `url('${mallimage}')` }}
           className='text-white h-[500px] flex justify-center items-center bg-cover bg-center -mt-6 px-5 md:px-0 relative -z-10'
         >
           <div className='absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent rounded-xl'></div>
@@ -84,6 +84,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
           </div>
 
           <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
+
+
             <MallCard  rating={rating1} num={1} img={"images/mall-6.jpg"}/>
             <MallCard rating={rating05} num={2} img={"images/mall-3.jpg"}/>
             <MallCard  rating={rating05} img={"images/mall-2.jpg"} />
@@ -94,7 +96,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <MallCard rating={rating05} num={6} img={"images/mall-6.jpg"}/>
             <MallCard  rating={rating05}  num={7} img={"images/mall-4.jpg"}/>
           </div>
-          
+
           {/* pagination */}
           <div className='flex items-center py-2 justify-center mt-20 gap-x-3 text-xs'>
             <FontAwesomeIcon icon={faArrowLeft} className='p-1 outline-1 outline-slate-600  outline rounded-full'/>
@@ -121,7 +123,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
           <div className='grid md:grid-cols-2 grid-cols-1 gap-x-5 gap-y-6 md:gap-y-0'>
             <div style={{backgroundImage: 'url("images/mall-7.jpg")'}} className='rounded-xl md:h-[600px]  bg-cover relative'>
-              
+
             <div className='absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent rounded-xl' ></div>
 
               <div className=' flex  items-center text-white justify-between px-4 pr-8 mt-[490px] '>
@@ -133,7 +135,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                   <FontAwesomeIcon icon={faArrowRight} className='text-white text-xl' />
                 </div>
               </div>
-  
+
             </div>
 
             <div className='grid grid-cols-1 gap-y-5'>

@@ -2,11 +2,16 @@
 
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Mall;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
+
+  $malls = Mall::with('galleries')->get();
+
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -14,11 +19,14 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
         'envVariables' => [
             'APP_URL' => env('APP_URL')
-        ]
-        
+        ],
+        'malls' => $malls->only(
+          'id',
+          ''
+        )
     ]);
 
-    
+
 });
 
 Route::get('/gallery', function(){

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Mall;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mall_images', function (Blueprint $table) {
+        Schema::create('bookmarks', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Mall::class)->constrained()->cascadeOnDelete();
-            $table->string('image_path');
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Mall::class);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mall_images');
+        Schema::dropIfExists('bookmarks');
     }
 };
