@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Mall;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class AmenityFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'mall_id' => Mall::inRandomOrder()->first()->id,
+            'name' =>
+            fake()->randomElement(['security', 'gym', 'furnished']),
+            'description' => fake()->paragraph(),
+            
         ];
     }
 }

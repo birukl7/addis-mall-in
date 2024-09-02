@@ -13,7 +13,7 @@ import addis from '../../../public/images/addis.jpg';
 import mallimage from '../../../public/images/mall-9.jpg'
 import illust from '../../../public/images/ratings/Online shopping-amico.svg'
 import rating1 from '../../../public/images/ratings/rating-0.png';
-import rating05 from '../../../public/images/ratings/rating-05.png';
+import rating05 from '../../../public/images/ratings/rating-5.png';
 import rust from '../../../public/images/phone-mpckup.png'
 import google from '../../../public/images/google-play-badge.png'
 import Numbers from '@/myComponents/Numbers';
@@ -26,7 +26,7 @@ import MyFooter from '@/myComponents/MyFooter';
 import { useInView } from 'react-intersection-observer';
 import { Head, usePage } from '@inertiajs/react';
 
-export default function Welcome({ auth, laravelVersion, phpVersion,  }) {
+export default function Welcome({ auth, laravelVersion, phpVersion, malls  }) {
 
   const {name} = useInView()
   const { envVariables } = usePage().props;
@@ -83,10 +83,35 @@ export default function Welcome({ auth, laravelVersion, phpVersion,  }) {
             </div>
           </div>
 
+          {
+          //  malls.map((mall)=>{
+          //   console.log(mall)
+          //   return(
+          //     <p className='text-6xl'>{mall.name}</p>
+          //   )})
+          // <p className='text-xl'>{malls}</p>
+          }
+
           <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
 
+          {
+            malls.map((mall, index)=>(
+              <MallCard
+                rating={mall.rating}
+                num={index}
+                img={mall.image_url || 'images/mall-3.jpg'}
+                name={mall.name}
+                location={mall.address}
+                shopsNumber={mall.office_number}
+                peopleNumber={mall.estimated_people}
+                ratingImg={`images/ratings/rating-${(Math.round(mall.rating * 2) / 2)*10}.png`}
+                mallId={mall.id}
+                />
+            ))
+          }
 
-            <MallCard  rating={rating1} num={1} img={"images/mall-6.jpg"}/>
+            <MallCard  rating={`images/ratings/rating-0.png`}
+            ratingImg={`images/ratings/rating-0.png`} num={1} img={"images/mall-6.jpg"}/>
             <MallCard rating={rating05} num={2} img={"images/mall-3.jpg"}/>
             <MallCard  rating={rating05} img={"images/mall-2.jpg"} />
             <MallCard  rating={rating1} num={1} img={"images/mall-4.jpg"}/>

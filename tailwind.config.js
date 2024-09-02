@@ -22,8 +22,8 @@ export default {
                 greenish: '#66A64D',
             },
             backgroundSize:{
-                '140%':'140%',
                 '150%':'150%',
+                '160%':'160%',
             }
         },
     },

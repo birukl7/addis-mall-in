@@ -34,6 +34,7 @@ return new class extends Migration
           $table->string('office_number')->nullable();
           $table->decimal('latitude', 10, 7)->nullable();
           $table->decimal('longitude', 10, 7)->nullable();
+          $table->string('subcity')->nullable();
           $table->timestamps();
         });
     }

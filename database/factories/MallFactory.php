@@ -28,11 +28,15 @@ class MallFactory extends Factory
             'floors' => fake()->randomNumber(2),
             'opening_hours' => fake()->time(),
             'closing_hours' => fake()->time(),
-            'parking_avaibale' => fake()->boolean(),
+            'parking_available' => fake()->boolean(),
             'website' => fake()->url(),
             'description' => fake()->paragraph(5),
-            'latitude' => fake()->randomNumber(34),
-            'longitude' => fake()->randomNumber(20),
+            'latitude' => fake()->latitude(),
+            'longitude' => fake()->longitude(),
+            'subcity' => fake()->randomElement(['yeka', 'Lemi kura','arada', 'kolfe', 'akaki kality', 'lideta', 'nifas silk', 'bole']),
+            'featured' => fake()->boolean(),
+            'estimated_people' => fake()->numberBetween(10,1000),
+            'office_number' => fake()->numberBetween(10,100),
         ];
     }
 }

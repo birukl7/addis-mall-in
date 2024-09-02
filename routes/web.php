@@ -9,8 +9,23 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
 
-  $malls = Mall::with('galleries')->get();
+  $malls = Mall::with('galleries', 'images', 'ratings')->get();
 
+  $malls = $malls->map(function ($mall) {
+    return [
+        'id' => $mall->id,
+        'name' => $mall->name,
+        'ratings' => $mall->ratings,
+        'address' => $mall->address,
+        'image_url' => $mall->images->first()->image_path ?? null, // Get the first image's URL or null if not available
+        'estimated_people' => $mall->estimated_people,
+        'office_number' => $mall->office_number,
+        'rating' => $mall->ratings->first()->rating ?? null,
+    ];
+});
+
+
+  // return dd($malls);
 
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -20,10 +35,7 @@ Route::get('/', function () {
         'envVariables' => [
             'APP_URL' => env('APP_URL')
         ],
-        'malls' => $malls->only(
-          'id',
-          ''
-        )
+        'malls' => $malls
     ]);
 
 
@@ -57,8 +69,18 @@ Route::get('/spaces', function(){
  ]);
 })->name('spaces');
 
-Route::get('/mall-detail', function(){
-    return Inertia::render('MallDetail');
+Route::get('/mall-detail/{mall}', function(Mall $mall){
+    // dd($mall);
+    return Inertia::render('MallDetail',[
+      'mall' => $mall->only(
+        'id',
+        'name',
+        'website',
+        'rating'
+
+
+      )
+    ]);
 });
 
 Route::get('/dashboard', function () {

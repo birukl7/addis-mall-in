@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Mall;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,9 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "user_id" => User::inRandomOrder()->first()->id,
+            "mall_id" => Mall::inRandomOrder()->first()->id,
+            'content' => fake()->paragraphs(3, true),
         ];
     }
 }

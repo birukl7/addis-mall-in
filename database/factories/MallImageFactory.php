@@ -19,7 +19,7 @@ class MallImageFactory extends Factory
     {
         return [
             'mall_id' =>  Mall::inRandomOrder()->first()->id,
-            'image_path' => 'http://picsum.photos/seed/'.fake()->randomNumber(100000).'/1000/1000'
+            'image_path' => 'http://picsum.photos/seed/'.fake()->numberBetween(1, 80000).'/1000/1000'
         ];
     }
 }
